@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <img src="./minimal-cmake-emscripten-playground.data">
+  <p>
+    <h1>See console</h1>
+  </p>
+  <script>
+    var Module = {
+      onRuntimeInitialized: function() {
+        console.log(Module.HARDCODED_1234567890, "// YES, it is constant 1234567890"); 
+        console.log(Module.PRODUCT_30_20, "// not a constant 600");
+        console.log(Module.PRODUCT_10_20, "// not a constant 200");
+        console.log(Module.factorial(5), "// returns 120");
+        console.log(Module.SUM_42_14_2_18_9, "// not a constant 85");
+        console.log(Module.Factorial_10, "// not a constant 200");
+      }
+    };
+  </script>
+  <script src="minimal-cmake-emscripten-playground.js"></script>
+</body>
+</html>

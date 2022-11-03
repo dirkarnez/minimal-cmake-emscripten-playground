@@ -25,7 +25,20 @@ constexpr int sum(T v, Types&&... others) {
     return v + sum(others...);
 }
 
+
+template<unsigned int N> 
+struct Factorial {
+  static constexpr unsigned int value = N * Factorial<N - 1>::value;
+};
+
+// Base case via template specialization:
+
+template<> struct Factorial<0> {
+  static constexpr unsigned int value = 1;
+};
+
 const int PRODUCT_30_20 =  product(30, 20);
+constexpr unsigned int Factorial_10 = Factorial<10>::value;
 
 EMSCRIPTEN_BINDINGS(my_module) {
     constant("HARDCODED_1234567890", 1234567890); // YES, it is constant 
@@ -33,6 +46,7 @@ EMSCRIPTEN_BINDINGS(my_module) {
     constant("PRODUCT_10_20", product(10, 20)); // not constant
     function("factorial", &factorial); // not constexpr, 
     constant("SUM_42_14_2_18_9", sum(42, 14, 2, 18, 9));  // not constant
+    constant("Factorial_10", Factorial_10);  // not constant
 }
 
 

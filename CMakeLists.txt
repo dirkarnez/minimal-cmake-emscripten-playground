@@ -9,7 +9,6 @@ project(minimal-cmake-emscripten-playground)
 set(CMAKE_VERBOSE_MAKEFILE on)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build.emscripten)
 
-
 # add_library(mp4v2 STATIC IMPORTED)
 
 # set_property(
@@ -34,6 +33,6 @@ add_executable(${PROJECT_NAME}
     "src/main.cpp"
 )
 
-set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --bind")
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --preload-file ${CMAKE_SOURCE_DIR}/assets --bind")
 
 # target_link_libraries(${PROJECT_NAME} mp4v2)
