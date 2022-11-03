@@ -1,6 +1,6 @@
 /*.js
 /index.html
 /build/
-/build.emscripten/*.data
-/build.emscripten/*.js
-/build.emscripten/*.wasm
+build.emscripten/*.data
+build.emscripten/*.js
+build.emscripten/*.wasm
