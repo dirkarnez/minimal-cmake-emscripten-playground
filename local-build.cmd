@@ -25,17 +25,6 @@ SET EMSDK_NODE=%current_directory%emsdk/node/14.18.2_64bit/bin/node.exe
 SET EMSDK_PYTHON=%current_directory%emsdk/python/3.9.2-nuget_64bit/python.exe
 SET JAVA_HOME=%current_directory%emsdk/java/8.152_64bit
 
-@REM cd emsdk
-@REM emsdk install latest
-@REM emsdk activate latest
-
-@REM set PATH_OLD=%PATH%
-@REM cd emsdk
-@REM emsdk activate
-@REM emsdk_env.bat
-@REM set PATH=%PATH%;%PATH_OLD%
-@REM pause
-
 cmake.exe -G"MinGW Makefiles" ^
 -DCMAKE_TOOLCHAIN_FILE="%current_directory_linux%emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake" ^
 -DEMSCRIPTEN_ROOT="%current_directory_linux%emsdk/upstream/emscripten" ^
