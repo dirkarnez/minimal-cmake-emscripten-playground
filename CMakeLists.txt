@@ -34,6 +34,6 @@ add_executable(${PROJECT_NAME}
     "src/main.cpp"
 )
 
-# set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --preload-file ${CMAKE_SOURCE_DIR}/assets --bind")
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --bind")
 
 # target_link_libraries(${PROJECT_NAME} mp4v2)
